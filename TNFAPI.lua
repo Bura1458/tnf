@@ -192,7 +192,7 @@ function tightstudioscoolapia:minigungobrrr(state)
 end 
 
 function tightstudioscoolapia:sendtoxicmessage(skiduser)
-local toxicwords = {"rian likes blackops feets","rianator is obese","color is skid","rian likes men","tightstudios on top  | gg/bcT9w8r","nice anti cheat","jeeper creeper sends his regards","L "..skiduser}
+local toxicwords = {"rian on top","nv is a skid","nice anti cheat","jeeper creeper sends his regards","L "..skiduser,"play new age today!","new age > nvs tnf"}
 misctable.request("sendChat",toxicwords[math.random(1,#toxicwords)],false)
 end
 
@@ -259,7 +259,6 @@ end
 
 
 function tightstudioscoolapia:damageplayertss(killauradistance,killauradelay,dmgafterswing,autotoxicbool)
-pcall(function()
 local me = game:GetService("Players").LocalPlayer
 for _,v in pairs(game:GetService('Players'):GetPlayers()) do
     if  v:FindFirstChild("Status")  then 
@@ -300,7 +299,6 @@ end
 end
 end
 end
-end)
 end
 end
 end
