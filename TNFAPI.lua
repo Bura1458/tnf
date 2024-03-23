@@ -290,7 +290,6 @@ end
    task.wait(dmgafterswing)
   end
   
-  print("testt")
   misctable.request("damage",v,inventorytable.itemDrawn.name)
   if autotoxicbool == true and v.Status.IsDead.Value == true  then
    task.wait(.3)
