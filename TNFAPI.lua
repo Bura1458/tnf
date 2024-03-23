@@ -34,10 +34,6 @@ for i,v in pairs(getgc(true)) do
     if type(v) == "table" and rawget(v,"item") then
       LTSS = v
     end
-     if type(v) == "table" and rawget(v,"maxRange") then
-        table.insert(rangetable,v)
-      break;
-    end
  end
  
 task.wait(1)
