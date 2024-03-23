@@ -259,9 +259,10 @@ end
 
 
 function tightstudioscoolapia:damageplayertss(killauradistance,killauradelay,dmgafterswing,autotoxicbool)
+pcall(function()
 local me = game:GetService("Players").LocalPlayer
 for _,v in pairs(game:GetService('Players'):GetPlayers()) do
-    if v:FindFirstChild("Status") then 
+    if  v:FindFirstChild("Status")  then 
 if v.Name ~=me.Name and v.Status.IsDead.Value ~= true  and integritytable.staminaAvailable == true and inventorytable.itemDrawn~=nil   then
     
     if inventorytable.itemDrawn.stats.weaponType == "bow" then
@@ -299,6 +300,7 @@ end
 end
 end
 end
+end)
 end
 end
 end
