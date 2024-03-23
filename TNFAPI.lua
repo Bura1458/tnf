@@ -285,11 +285,12 @@ end
    if killauradelay ~= tonumber(0) then
    task.wait(killauradelay)
 end
-   itemtable._swing(inventorytable.itemDrawn)
+   itemtable.swing(inventorytable.itemDrawn)
    if dmgafterswing ~= tonumber(0) then
    task.wait(dmgafterswing)
   end
   
+  print("testt")
   misctable.request("damage",v,inventorytable.itemDrawn.name)
   if autotoxicbool == true and v.Status.IsDead.Value == true  then
    task.wait(.3)
