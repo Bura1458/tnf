@@ -348,10 +348,10 @@ break;
 end
 if lootfilter == true then
 if items.Name ~= 'Bandage' and items.Name ~= 'Flintlock ball' and items.Name~="Arrow" then
-misctable.Request('_lootPlayer',target,items.Name,reallyfunnystringts)
+misctable.Request('lootPlayer',target,items.Name,reallyfunnystringts)
 end
 else
-misctable.Request('_lootPlayer',target,items.Name,reallyfunnystringts)
+misctable.Request('lootPlayer',target,items.Name,reallyfunnystringts)
 end
 end
 root.CFrame = old
