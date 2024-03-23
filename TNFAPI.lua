@@ -290,7 +290,7 @@ end
    task.wait(dmgafterswing)
   end
   
-  misctable.request("damage",v,inventorytable.itemDrawn.name,nil,true)
+  misctable.request("damage",v,inventorytable.itemDrawn.name)
   if autotoxicbool == true and v.Status.IsDead.Value == true  then
    task.wait(.3)
   tightstudioscoolapia:sendtoxicmessage(v.Name)
