@@ -172,22 +172,7 @@ function tightstudioscoolapia:getclosestlogtome(objecttype)
     end)
 end
 
---// hook stuff
 
-local oldindexts
-oldindexts = hookmetamethod(game, "__index", newcclosure(function(...)
-   local self, k = ...
-   
-   if not checkcaller() and k == "Target" and self == game:GetService("Players").LocalPlayer:GetMouse() and tightstudioscoolsettings.treeautofarmts == true  and closestobjecttsvar then
-       if currenttask == "tree" and closestobjecttsvar:FindFirstChild("Triggers") then
-          return closestobjecttsvar.Triggers.Trigger.Part
-           elseif currenttask == "log" and closestobjecttsvar then
-               return closestobjecttsvar
-           end
-   end
-
-   return oldindexts(...)
-end))
 task.wait(1)
 
 function tightstudioscoolapia:changehungercapacity(newvalue)
