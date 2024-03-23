@@ -193,7 +193,7 @@ end
 
 function tightstudioscoolapia:sendtoxicmessage(skiduser)
 local toxicwords = {"rian likes blackops feets","rianator is obese","color is skid","rian likes men","tightstudios on top  | gg/bcT9w8r","nice anti cheat","jeeper creeper sends his regards","L "..skiduser}
-misctable.Request("sendChat",toxicwords[math.random(1,#toxicwords)],false)
+misctable.request("sendChat",toxicwords[math.random(1,#toxicwords)],false)
 end
 
 function tightstudioscoolapia:changebagcapacity(newvalue)
@@ -271,7 +271,7 @@ if v.Name ~=me.Name and v.Status.IsDead.Value ~= true  and integritytable.stamin
    if isskidinsafezonets == false then
    if killauradelay ~= tonumber(0) then
    task.wait(killauradelay)
-     misctable.Request("damage",v,inventorytable.itemDrawn.name,1)
+     misctable.request("damage",v,inventorytable.itemDrawn.name,1)
        return
        end
    end
@@ -290,7 +290,7 @@ end
    task.wait(dmgafterswing)
   end
   
-  misctable.Request("damage",v,inventorytable.itemDrawn.name,nil,true)
+  misctable.request("damage",v,inventorytable.itemDrawn.name,nil,true)
   if autotoxicbool == true and v.Status.IsDead.Value == true  then
    task.wait(.3)
   tightstudioscoolapia:sendtoxicmessage(v.Name)
@@ -338,10 +338,10 @@ break;
 end
 if lootfilter == true then
 if items.Name ~= 'Bandage' and items.Name ~= 'Flintlock ball' and items.Name~="Arrow" then
-misctable.Request('lootPlayer',target,items.Name,reallyfunnystringts)
+misctable.request('lootPlayer',target,items.Name,reallyfunnystringts)
 end
 else
-misctable.Request('lootPlayer',target,items.Name,reallyfunnystringts)
+misctable.request('lootPlayer',target,items.Name,reallyfunnystringts)
 end
 end
 root.CFrame = old
