@@ -43,6 +43,7 @@ local itemtable = LTSS.item
 local misctable = LTSS.miscHandler
 local interactiontable = LTSS.interaction --// original name was interaction
 local operabletable = LTSS.operable
+local firingtable = LTSS.firing
 local currenttask = "tree"
 
 
@@ -184,9 +185,9 @@ end
 
 function tightstudioscoolapia:minigungobrrr(state)
     if state == true then 
-        setconstant(firing.fire,3,0)
+        setconstant(firingtable.fire,3,0)
    else 
-    setconstant(firing.fire,3,1)
+    setconstant(firingtable.fire,3,1)
    end
 end 
 
