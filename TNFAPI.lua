@@ -262,7 +262,7 @@ function tightstudioscoolapia:damageplayertss(killauradistance,killauradelay,dmg
 local me = game:GetService("Players").LocalPlayer
 pcall(function()
 for _,v in pairs(game:GetService('Players'):GetPlayers()) do
-if v.Name ~=me.Name and v.Status.Downed.Value ~= true  and integritytable.staminaAvailable == true and inventorytable.itemDrawn~=nil   then
+if v.Name ~=me.Name and v.Status.IsDead.Value ~= true  and integritytable.staminaAvailable == true and inventorytable.itemDrawn~=nil   then
 
     if inventorytable.itemDrawn.stats.weaponType == "bow" then
          local mag = (me.Character.Head.Position - v.Character.Head.Position).magnitude
@@ -291,7 +291,7 @@ end
   end
   
   misctable.Request("damage",v,inventorytable.itemDrawn.name,nil,true)
-  if autotoxicbool == true and v.Status.Downed.Value == true  then
+  if autotoxicbool == true and v.Status.IsDead.Value == true  then
    task.wait(.3)
   tightstudioscoolapia:sendtoxicmessage(v.Name)
 end
@@ -324,7 +324,7 @@ for _,v in pairs(plrs:GetPlayers()) do
 if v.Name~=me.Name and v.Character:FindFirstChild('HumanoidRootPart') and v:FindFirstChild("Status") then
 local victimroot = v.Character.HumanoidRootPart
 local mag = (root.Position-victimroot.Position).magnitude
-if mag<tonumber(silentdrydistance) and v.Status.Downed.Value == true then
+if mag<tonumber(silentdrydistance) and v.Status.IsDead.Value == true then
 target = v
 root.CFrame = victimroot.CFrame+Vector3.new(0,1,0)
 
@@ -346,7 +346,7 @@ end
 end
 root.CFrame = old
 if target:FindFirstChild("Status") then
-target.Status.Downed.Value = false
+target.Status.IsDead.Value = false
 end
 end
 end
