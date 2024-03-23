@@ -192,7 +192,7 @@ function tightstudioscoolapia:minigungobrrr(state)
 end 
 
 function tightstudioscoolapia:sendtoxicmessage(skiduser)
-local toxicwords = {"rian on top","nv is a skid","nice anti cheat","jeeper creeper sends his regards","L "..skiduser,"play new age today!","new age > nvs tnf"}
+local toxicwords = {"rian likes blackops feets","rianator is obese","color is skid","rian likes men","tightstudios on top  | gg/bcT9w8r","nice anti cheat","jeeper creeper sends his regards","L "..skiduser}
 misctable.request("sendChat",toxicwords[math.random(1,#toxicwords)],false)
 end
 
@@ -258,48 +258,51 @@ end
 end
 
 
-function tightstudioscoolapia:damageplayertss(killauradistance, killauradelay, dmgafterswing, autotoxicbool)
-    local me = game:GetService("Players").LocalPlayer
-    for _, v in pairs(game:GetService('Players'):GetPlayers()) do
-        if v:FindFirstChild("Status") then
-            if v.Name ~= me.Name and v.Status.IsDead.Value ~= true and integritytable.staminaAvailable == true and inventorytable.itemDrawn ~= nil then
-                if inventorytable.itemDrawn.stats.weaponType == "bow" then
-                    local mag = (me.Character.Head.Position - v.Character.Head.Position).magnitude
-                    if mag < tonumber(killauradistance) then
-                        local isskidinsafezonets = tightstudioscoolapia:isplayerinsafezonets(v)
-                        if isskidinsafezonets == false then
-                            if killauradelay ~= tonumber(0) then
-                                task.wait(killauradelay)
-                            end
-                            misctable.request("damage", v, inventorytable.itemDrawn.name, 1)
-                            return
-                        end
-                    end
-                elseif inventorytable.itemDrawn.stats.type == 'melee' or inventorytable.itemDrawn.stats.type == 'knife' then
-                    local mag = (me.Character.Head.Position - v.Character.Head.Position).magnitude
-                    if mag < tonumber(killauradistance) then
-                        local isskidinsafezonetsa = tightstudioscoolapia:isplayerinsafezonets(v)
-                        if isskidinsafezonetsa == false then
-                            if killauradelay ~= tonumber(0) then
-                                task.wait(killauradelay)
-                            end
-                            itemtable.swing(inventorytable.itemDrawn)
-                            if dmgafterswing ~= tonumber(0) then
-                                task.wait(dmgafterswing)
-                            end
-                            misctable.request("damage", v, inventorytable.itemDrawn.name)
-                            if autotoxicbool == true and v.Status.IsDead.Value == true then
-                                task.wait(.3)
-                                tightstudioscoolapia:sendtoxicmessage(v.Name)
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
+function tightstudioscoolapia:damageplayertss(killauradistance,killauradelay,dmgafterswing,autotoxicbool)
+local me = game:GetService("Players").LocalPlayer
+pcall(function()
+for _,v in pairs(game:GetService('Players'):GetPlayers()) do
+if v.Name ~=me.Name and v.Status.IsDead.Value ~= true  and integritytable.staminaAvailable == true and inventorytable.itemDrawn~=nil   then
 
+    if inventorytable.itemDrawn.stats.weaponType == "bow" then
+         local mag = (me.Character.Head.Position - v.Character.Head.Position).magnitude
+   if mag <tonumber(killauradistance) then
+          local isskidinsafezonets = tightstudioscoolapia:isplayerinsafezonets(v)
+   if isskidinsafezonets == false then
+   if killauradelay ~= tonumber(0) then
+   task.wait(killauradelay)
+     misctable.request("damage",v,inventorytable.itemDrawn.name,1)
+       return
+       end
+   end
+end
+        end
+   if inventorytable.itemDrawn.stats.type == 'melee' or inventorytable.itemDrawn.stats.type == 'knife'  then
+    local mag = (me.Character.Head.Position - v.Character.Head.Position).magnitude
+   if mag <tonumber(killauradistance) then
+            local isskidinsafezonetsa = tightstudioscoolapia:isplayerinsafezonets(v)
+   if isskidinsafezonetsa == false then
+   if killauradelay ~= tonumber(0) then
+   task.wait(killauradelay)
+end
+   itemtable.swing(inventorytable.itemDrawn)
+   if dmgafterswing ~= tonumber(0) then
+   task.wait(dmgafterswing)
+  end
+  
+  print("testt")
+  misctable.request("damage",v,inventorytable.itemDrawn.name)
+  if autotoxicbool == true and v.Status.IsDead.Value == true  then
+   task.wait(.3)
+  tightstudioscoolapia:sendtoxicmessage(v.Name)
+end
+end
+end
+end
+end
+end
+end)
+end
 
 function tightstudioscoolapia:holdbandage(object)
 for _,v in pairs(inventorytable.tools) do
